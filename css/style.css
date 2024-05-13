@@ -1,5 +1,9 @@
+body {
+    margin: 0;
+}
+
 header, main {
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -47,3 +51,45 @@ footer {
 #content p {
     padding: 8px;
 }
+
+
+@media screen and (max-width: 540px) {
+
+    h1 {
+        text-align: start;
+        padding: 8px;
+    }
+
+    ul {
+        display: unset;
+        margin-bottom: 10px;
+    }
+
+    ul li {
+        font-size: initial;
+        border: unset;
+        border-radius: unset;
+        background-color: bisque;
+        padding: unset;
+        text-align: center;
+    }
+
+    footer {
+        display: inline-block;
+        text-align: center;
+    }
+
+    footer p {
+        display: inline;
+    }
+
+    #content {
+        display: initial;
+    }
+
+    #content img {
+        display: none;
+    }
+    
+}
+
