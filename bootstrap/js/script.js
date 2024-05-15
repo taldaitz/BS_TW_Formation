@@ -1,5 +1,6 @@
 let isEmailValid = true;
 let isMessageValid = true;
+const liveToast = document.getElementById('liveToast');
 
 (() => {
 'use strict'
@@ -11,12 +12,27 @@ const forms = document.querySelectorAll('.needs-validation')
 Array.from(forms).forEach(form => {
     form.addEventListener('submit', event => {
 
-    if (!form.checkValidity() || !isEmailValid || !isMessageValid) {
         event.preventDefault()
         event.stopPropagation()
-    }
 
-    form.classList.add('was-validated')
+        form.classList.add('was-validated')
+
+    if (form.checkValidity() && isEmailValid  && isMessageValid) {
+
+        
+        const toastMessage = document.getElementById('toast-message');
+        const toastHead = document.getElementById('toast-head');
+
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+        const message = document.getElementById('message').value;
+
+        toastHead.innerHTML = firstname + ' ' + lastname;
+        toastMessage.innerHTML = message;
+
+        bootstrap.Toast.getOrCreateInstance(liveToast).show();
+
+    }
     }, false)
 })
 })()
@@ -24,7 +40,6 @@ Array.from(forms).forEach(form => {
 
 
 const emailField = document.getElementById('email');
-
 emailField.addEventListener('change', function () {
     const emailEntered = emailField.value;
 
@@ -45,7 +60,6 @@ emailField.addEventListener('change', function () {
 
 
 const messageArea = document.getElementById('message');
-
 messageArea.addEventListener('change', function () {
     const message = messageArea.value;
 
@@ -57,3 +71,9 @@ messageArea.addEventListener('change', function () {
         isMessageValid = true;
     }
 });
+
+liveToast.addEventListener('hide.bs.toast', function () {
+    window.location = 'index.html';
+});
+
+
