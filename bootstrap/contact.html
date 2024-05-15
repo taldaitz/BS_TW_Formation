@@ -37,63 +37,123 @@
         </div>
     </header>
 
-    <form action="" method="post" class="container bg-light border rounded p-3">
+    <form action="" method="post" class="container bg-light border rounded p-3 needs-validation" novalidate>
         <div class="row">
-            <p class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6">
                 <label for="lastname" class="form-label">Nom :</label>
-                <input type="text" name="lastname" id="lastname" class="form-control">
-            </p>
+                <input type="text" name="lastname" id="lastname" class="form-control" required>
+                <div class="valid-feedback">
+                    Le Nom est valide.
+                </div>
 
-            <p class="col-12 col-lg-6">
+                <div class="invalid-feedback">
+                    Le Nom doit etre renseigné et valide.
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
                 <label for="firstname" class="form-label">Prénom :</label>
-                <input type="text" name="firstname" id="firstname" class="form-control">
-            </p>
+                <input type="text" name="firstname" id="firstname" class="form-control" required>
+
+                <div class="valid-feedback">
+                    Le Prénom est valide.
+                </div>
+
+                <div class="invalid-feedback">
+                    Le Prénom doit etre renseigné et valide.
+                </div>
+            </div>
 
         </div>
 
         <div class="row">
-            <p class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6">
                 <label for="date_of_birth" class="form-label">Date de naissance :</label>
-                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control">
-            </p>
+                <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" required>
 
-            <p class="col-12 col-lg-6">
+                <div class="valid-feedback">
+                    La Date de naissance est valide.
+                </div>
+
+                <div class="invalid-feedback">
+                    La Date de naissance doit etre renseignée et valide.
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
                 <label for="email" class="form-label">Email :</label>
-                <input type="email" name="email" id="email" class="form-control">
-            </p>
+                <input type="email" name="email" id="email" class="form-control" required>
+
+                <div class="valid-feedback" id="emailSuccessMessage">
+                    L'Email a bien un @
+                </div>
+
+                <div class="invalid-feedback">
+                    L'Email doit avoir un @ et appartenir à : dawan.fr, gmail.com, hotmail.com
+                </div>
+            </div>
         </div>
 
         <div class="row">
-            <p>
+            <div>
                 <label for="message" class="form-label">Message :</label>
-                <textarea name="message" id="message" class="form-control"></textarea>
-            </p>
+                <textarea name="message" id="message" class="form-control" required></textarea>
+
+                <div class="valid-feedback">
+                    Le message est valide.
+                </div>
+
+                <div class="invalid-feedback">
+                    Le message doit faire plus de 20 caractères et etre renseigné.
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-            <p>
-                <input type="checkbox" name="aggree_conditions" id="aggree_conditions" class="form-check-input">
+        <div class="row mt-2">
+            <div>
+                <input type="checkbox" name="aggree_conditions" id="aggree_conditions" class="form-check-input" required>
                 <label for="aggree_conditions" class="form-check-label">Accepte les conditions d'usage</label>
-            </p>
+
+                <div class="valid-feedback">
+                    Les conditions ont bien été acceptés.
+                </div>
+
+                <div class="invalid-feedback">
+                    Les conditions doivent etre acceptés
+                </div>
+            </div>
+
+                
         </div>
 
-        <div class="row">
-            <p>
+        <div class="row mt-2">
+            <div>
                 <label for="motive" class="form-label">Motif :</label>
-                <select name="motive" id="motive" class="form-select">
-                    <option value="0">Choisissez le motif de votre prise de contact</option>
+                <select name="motive" id="motive" class="form-select" required>
+                    <option value="">Choisissez le motif de votre prise de contact</option>
                     <option>Signaler un problème</option>
                     <option>Poser une question</option>
                     <option>Dire bonjour</option>
                 </select>
-            </p>
+
+                <div class="valid-feedback">
+                    Le motif est valide.
+                </div>
+
+                <div class="invalid-feedback">
+                    Un motif doit etre selectionné.
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-                <button class="btn btn-secondary col-lg-6">R.A.Z</button>
-                <input type="submit" value="OK" class="btn btn-primary col-lg-6">
+        <div class="text-right text-lg-center mt-3">
+                <button class="btn btn-secondary">R.A.Z</button>
+                <input type="submit" value="OK" class="btn btn-primary">
         </div>
     </form>
+
+
+    <script src="js/script.js"></script>
     
 </body>
 </html>
