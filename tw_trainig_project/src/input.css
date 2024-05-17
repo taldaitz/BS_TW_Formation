@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.card_tw {
+    @apply border border-black rounded p-4 hover:border-blue-600 hover:border-spacing-8 hover:bg-black
+}
